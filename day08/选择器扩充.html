@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div p{
+            background-color: pink;
+        }
+        div>a{
+            background-color: red;
+        }
+        .d1{
+            text-align: center;
+            margin: auto;
+            height: 200px;
+            width: 200px;
+            background-color: aquamarine;
+        }
+        h1,div,span{
+            font-family: 仿宋;
+        }
+        p.d1{
+            background-color: rebeccapurple;
+        }
+    </style>
+</head>
+<body>
+    <p>这是一个p标签</p>
+    <div>
+        <p>
+            这是一个div的后代p标签<br>  
+            <a href="#">不是哥们</a>
+        </p>
+        <a href="#">不是哥们</a>
+    </div>
+    <div>
+        这仅仅是个div选择器
+    </div>
+
+    <div class="d1">
+        bushi这是宋体吗
+        <div class="d2">1这是宋体吗
+            <div class="d3">2这是宋体吗
+                <p class="d4">3这是宋体吗
+
+                </p>
+            </div>
+        </div>
+    </div>
+    <p class="d5">4这是宋体吗</p>
+    <p class="d1">5这是宋体吗</p>
+    <span>这是一个span标签</span>
+    <h1>这是一个标题标签</h1>
+
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 立方体</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        .cube {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            transform-style: preserve-3d;
+            transition: transform 0.1s;
+        }
+
+        .face {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            color: white;
+            opacity: 0.8;
+            border: 2px solid #fff;
+        }
+
+        .front {
+            background-color: rgba(255, 0, 0, 0.3);
+            transform: translateZ(100px);
+        }
+
+        .back {
+            background-color: rgba(0, 255, 0, 0.3);
+            transform: rotateY(180deg) translateZ(100px);
+        }
+
+        .right {
+            background-color: rgba(0, 0, 255, 0.3);
+            transform: rotateY(90deg) translateZ(100px);
+        }
+
+        .left {
+            background-color: rgba(255, 255, 0, 0.3);
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+
+        .top {
+            background-color: rgba(255, 0, 255, 0.3);
+            transform: rotateX(90deg) translateZ(100px);
+        }
+
+        .bottom {
+            background-color: rgba(0, 255, 255, 0.3);
+            transform: rotateX(-90deg) translateZ(100px);
+        }
+        body {
+        margin: 0;
+        height: 100vh;
+        background: linear-gradient(45deg, #ff0000, #00ff80, #2f00ff);
+        background-size: 400% 400%;
+        animation: gradientAnimation 15s ease infinite;
+        }
+
+    @keyframes gradientAnimation {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div class="cube" id="cube">
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face right"></div>
+        <div class="face left"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+    </div>
+
+    <script>
+        const cube = document.getElementById('cube');
+        let isDragging = false;
+        let initialX, initialY;
+        let rotationX = 0, rotationY = 0;
+
+        // 自动旋转
+        let autoRotateInterval = setInterval(autoRotate, 50);
+
+        function autoRotate() {
+            if (!isDragging) {
+                rotationY += 1.2;
+                rotationX += 1.1;
+                
+                cube.style.transform = `rotateX(${rotationX}deg) rotateY(${rotationY}deg)`;
+            }
+        }
+
+        cube.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            initialX = e.clientX;
+            initialY = e.clientY;
+            clearInterval(autoRotateInterval); // 停止自动旋转
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+
+            const deltaX = e.clientX - initialX;
+            const deltaY = e.clientY - initialY;
+
+            rotationY += deltaX * 0.5;
+            rotationX += deltaY * 0.5;
+
+            cube.style.transform = `rotateX(${rotationX}deg) rotateY(${rotationY}deg)`;
+
+            initialX = e.clientX;
+            initialY = e.clientY;
+        });
+
+        document.addEventListener('mouseup', () => {
+            isDragging = false;
+            autoRotateInterval = setInterval(autoRotate, 50); // 恢复自动旋转
+        });
+    </script>
+</body>
+</html>

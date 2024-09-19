@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>代办事项</title>
+    <style>
+        body {
+            margin: 0 auto;
+            text-align: center;
+        }
+        .box {
+            width: 300px;
+            height: 375px;
+            margin: 0 auto;
+            background-color: #f2f2f2;
+            border: 1px solid #ccc;
+        }
+        .box-item {
+            width: 240px;
+            height: 50px;
+            margin: 0 auto;
+            background-color: #fff;
+            border: solid 3px #f2f2f2;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 10px;
+        }
+        .add {
+            width: 30px;
+            height: 30px;
+            background-color: skyblue;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 25px;
+            font-size: 30px;
+            cursor: pointer;
+            margin: 10px auto;
+            transform: translate(0,-310px);
+        }
+        .event {
+            line-height: 10px;
+            flex-grow: 1;
+        }
+        .completed {
+            text-decoration: line-through;
+            color: #ccc;
+        }
+        .check {
+            cursor: pointer;
+        }
+        .ok{
+            width: 35px;
+            height: 35px;
+            border: solid 1px #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div id="app" class="box">
+        <h1>代办事项</h1>
+        <div v-for="(item, index) in items" :key="index" class="box-item">
+            <div class="ok"></div>
+            <span :class="{ completed: item.completed }" class="event">{{ item.text }}</span>
+            <div class="check" @click="markAsCompleted(index)">{{ item.completed ? '✔️' : '' }}</div>
+        </div>
+        <div class="add" @click="addItem">+</div>
+    </div>
+
+    <script src="../Vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                items: [
+                    { text: '', completed: false },
+                    { text: '', completed: false },
+                    { text: '', completed: false },
+                    { text: '', completed: false },
+                    { text: '', completed: false }
+                ]
+            },
+            methods: {
+                addItem() {
+                    const event = prompt("请输入待办事项：");
+                    if (event) {
+                        const index = this.items.findIndex(item => item.text === '');
+                        if (index !== -1) {
+                            this.$set(this.items, index, { text: event, completed: false });
+                        } else {
+                            alert("已达到最大待办事项数量");
+                        }
+                    }
+                },
+                markAsCompleted(index) {
+                    if (this.items[index].text) {
+                        this.$set(this.items, index, {
+                            text: this.items[index].text,
+                            completed: true
+                        });
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

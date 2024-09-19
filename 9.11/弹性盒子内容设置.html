@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            width: 600px;
+            height: 300px;
+            background-color: aqua;
+            margin: auto;
+            display:flex;
+            /* 
+            1.默认左对齐
+            2.center居中对齐
+            3.flex-end右侧对齐
+            4.space-around 空格环绕
+            5.space-between 空格隔开
+             */
+            justify-content: space-between;
+            outline: solid white 1px;
+            
+        }
+        .a{
+            width: 100px;
+            height: 100px;
+            background-color: blanchedalmond;
+            font-size: 30px;
+            outline:solid white 1px;
+            text-align: center;
+            line-height: 100px;
+        }
+        .a:hover{
+            background-color:aquamarine ;
+        }
+        #d1{
+            align-self: center;
+        }
+        #d2{
+            align-self: flex-end;
+        }
+        #d3{
+            align-self: flex-start;
+        }
+        #d4{
+            align-self: center;
+            transform:translate(-20px,0px);
+            width: 100px;
+            /* height: 100px; */
+            align-self: stretch;
+            
+            background-color: blanchedalmond;
+            font-size: 30px;
+            outline:solid white 2px;
+            text-align: center;
+            line-height: 100px;
+        }
+        #d4:hover{
+            background-color:aquamarine ;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <div id="d1" class="a">1</div>
+        <div id="d2" class="a">2</div>
+        <div id="d3" class="a">3</div>
+        <div id="d4" >4</div>
+
+    </div>
+</body>
+</html>

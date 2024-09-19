@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        font-size: 90px;
+        text-align: center;
+    }
+
+</style>
+<body>
+    
+</body>
+<script>
+    var year = Number(prompt("请输入年份："));
+    if (isLeapYear(year)) {
+        document.write(year + "年是闰年");
+    } else {
+        document.write(year + "年是平年");
+    }
+    function isLeapYear(year) {
+    if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+
+
+</script>
+</html>

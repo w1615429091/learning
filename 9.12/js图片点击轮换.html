@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+function changeImage()
+{
+    element=document.getElementById('myimage')
+    if (element.src.match("3.jpg"))
+    {
+        element.src="./img/4.jpg";
+    }
+    else
+    {
+        element.src="./img/3.jpg";
+    }
+}
+    </script>
+    <img id="myimage" onclick="changeImage()" src="./img/4.jpg" >
+
+    <!-- <img id="myimage" onclick="changeImage()" src="./img/4.jpg" alt=""> -->
+</body>
+</html>

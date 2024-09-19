@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h1 v-bind:title="msg">案例1</h1>
+        <p v-bind:title="msg">段落1</p>
+        <!-- //单向绑定简写效果 -->
+        <p :title="msg">你无敌了孩子</p>
+        <p>{{c}}</p>
+        <p v-html="c"></p>
+    </div>
+</body>
+<script src="../Vue.js"></script>
+<script>
+    var v1 = new Vue({
+        el:"#app",
+        data:{
+            msg:"无敌",
+            c:"<a href='#'哈哈</a>"
+        }
+    })
+</script>
+</html>

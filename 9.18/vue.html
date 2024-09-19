@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app1">
+        <h1>Hello Vue</h1>
+        <p>{{5+1}}</p>
+        <p> 5+1 </p>
+        <p>message</p>
+        <p>{{message}}</p>
+        <p>3*5={{3*5}}</p>
+    </div>
+    
+    
+</body>
+<script src="../Vue.js"></script>
+<script>
+    new Vue({
+    el:"#app1", //element元素 标签 id 或者 class 名称 
+    data: {
+    message: 'Hello Vue.js!'
+    }
+    });
+
+</script>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 创建数组
+        var arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+        // 访问数组元素
+        for (var i = 0; i < arr.length; i++) {
+            console.log(arr[i]);
+        }
+        // 遍历数组元素
+        for (var i = 0; i < arr.length; i++) {
+            document.write(arr[i] + " ");
+        }
+        document.write("<br>");
+        // 数组长度
+        document.write("数组长度：" + arr.length + "<br>");
+        // 数组添加元素
+        arr.push(15);
+        document.write("数组添加元素：" + arr + "<br>");
+        // 数组删除最后一个元素
+        arr.pop();
+        document.write("数组删除元素：" + arr + "<br>");
+
+        // 删除数组的指定元素（ splice 方法，此处用randomint 方法生成随机索引）
+        var randomInt = getRandomInt(0, 8); // 生成 1 到 10 之间的随机整数
+        arr.splice(randomInt, 1);
+        document.write("删除数组的指定(此处随机)元素：" + arr + "<br>");
+
+        document.write("删除掉的整数：" + randomInt + "<br>");
+
+        // 数组排序
+        arr.sort();
+        document.write("数组排序：" + arr + "<br>");
+        // 数组反转
+        arr.reverse();
+        document.write("数组反转：" + arr + "<br>");
+        // 数组元素修改
+        arr[0] = 10;
+        document.write("数组元素修改：" + arr + "<br>");
+        // 数组合并
+        var arr2 = [7, 8, 9];
+        arr = arr.concat(arr2);
+        document.write("数组合并：" + arr + "<br>");
+        // 数组查找元素
+        var index = arr.indexOf(8);
+        document.write("数组查找元素：" + index + "<br>");
+        // 数组去重
+        var arr3 = [1, 2, 3, 2, 1, 4, 5, 4, 6];
+        var arr4 = arr3.filter(function(item, index, self) {
+            return self.indexOf(item) === index;
+        });
+        document.write("数组去重：" + arr4 + "<br>");
+
+
+        // 生成一个 min 到 max 之间的随机整数
+        function getRandomInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+    </script>
+</body>
+<style>
+    body{
+        font-size: 25px;
+    }
+</style>
+</html>

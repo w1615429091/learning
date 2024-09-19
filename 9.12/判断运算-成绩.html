@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        font-size: 90px;
+        text-align: center;
+        }
+</style>
+<body>
+    
+</body>
+<script>
+    var score = Number(prompt("请输入成绩score:"));
+    // if(score <= 100 && score >= 0 )
+    // {
+    //     if(score >= 60)
+    //     {
+    //     document.write("当前的分数为：" + score + "，及格");
+    //     }
+    //     else
+    //     {
+    //         document.write("当前的分数为：" + score + "，不及格");
+    //     }
+    // }
+    //     else{
+    //     document.write("输入的成绩有误，请重新输入！");
+    //     }
+    if(score >= 0 && score <= 100){
+        switch(true){
+            case score >= 90:
+                document.write("优秀");
+                break;
+            case score >= 80:
+                document.write("良好");
+                break;
+            case score >= 60:
+                document.write("及格");
+                break;
+            case score <= 60:
+                document.write("不是哥们，你也不行啊");
+                break;
+        }
+
+    }else{
+        document.write("输入的成绩有误，请重新输入！");
+    }
+
+</script>
+</html>
