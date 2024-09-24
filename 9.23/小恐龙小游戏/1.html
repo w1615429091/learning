@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .block {
+        width: 400px;
+        height: 150px;
+        background-color: aqua;
+        position: relative;
+    }
+    .dinosaur {
+        width: 20px;
+        height: 50px;
+        background-color: red;
+        position: absolute;
+        bottom: 0;
+        
+    }
+    .cactus {
+        width: 20px;
+        height: 25px;
+        background-color: green;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        animation: moveCactus 1.5s linear infinite;
+    }
+    @keyframes moveCactus {
+        0%{
+            transform: translate(0px);
+        }
+        100%{
+            transform: translate(-400px);
+        }
+    }
+    .jump {
+        animation: jumpAnimation 0.4s ease forwards;
+    }
+  
+    @keyframes jumpAnimation {
+        0% {
+            bottom: 0;
+        }
+        50% {
+            bottom: 100px; /* 岗位高度， 可以根据需要调整 */
+        }
+        100% {
+            bottom: 0;
+        }
+    }
+</style>
+<body>
+    <div class="block">
+        <div class="dinosaur" id="dinosaur"></div>
+        <div class="cactus" id="cactus"></div>
+</body>
+<script src="./script.js"></script>
+</html>

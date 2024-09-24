@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <my v-bind:x="10" v-bind:y="20"></my>
+    </div>
+</body>
+<script src="../Vue.js"></script>
+<script>
+    Vue.component("my",{
+        props:["x","y"],
+        template:`<div>变量x:{{x}},变量2:{{y}}</div>`
+    });
+    var v1 = new Vue({
+        el:"#app"
+    });
+</script>
+</html>

@@ -11,7 +11,8 @@
         <p>{{b}}</p>
         <p>{{c}}</p>
         <p>{{he}}</p>
-        <p>{{ji}}</p>
+        <p>a*b*c={{ji}}</p>
+        <p>球的体积为：{{s}}</p>
     </div>
     
 </body>
@@ -22,7 +23,9 @@
         data:{
             a:3,
             b:4,
-            c:5
+            c:5,
+            pi:3.1415926,
+            r:2
         },
         //属性中定义了计算属性
         computed:{
@@ -32,10 +35,15 @@
                 }
             },
             ji:{
-                git(){
+                get(){
                     return this.a * this.b * this.c;
-                }
+            }
             },
+            s:{
+                get(){
+                    return 4 * this.pi * this.r * this.r;
+            }
+        }
         }
     })
 </script>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <stu :sid="sid" :sname="sname" :age="age"></stu>
+
+    </div>
+</body>
+<script src="../Vue.js"></script>
+<script>
+    Vue.component({
+        props:["sid","sname","age"],
+        template:`<div>
+            <p>学号：{{sid}}<p>
+            <p>姓名：{{sname}}<p>
+            <p>年龄：{{age}}<p>
+            </div>`
+    })
+    // Vue.component("stu", {
+    //     props: ["sid","sname","age"],  // 修改这里，将 "x" 改为 "name"
+    //     template: `<div>
+    //         <p>学号：{{sid}}<p>
+    //         <p>姓名：{{sname}}<p>
+    //         <p>年龄：{{age}}<p>
+    //         </div>`  // 使用 name 属性
+    // });
+    var v1 = new Vue({
+        el: "#app",
+        data: {
+            sid:"s001",
+            sname: "张三",
+            age:"20"
+        }
+    })
+</script>
+</html>
