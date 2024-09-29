@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>问候信息</title>
+    <script>
+        function greetBasedOnTime() {
+            // 获取当前日期和时间
+            var currentDate = new Date();
+            // 提取小时数
+            var hours = currentDate.getHours();
+            // 获取显示区域
+            var greetingElement = document.getElementById("greeting");
+
+            // 判断并显示相应的问候语
+            if (hours < 12) {
+                greetingElement.innerHTML = "早上好!";
+            } else {
+                greetingElement.innerHTML = "下午好!";
+            }
+        }
+
+        // 页面加载时执行问候函数
+        window.onload = greetBasedOnTime;
+    </script>
+</head>
+<body>
+
+<h2 id="greeting"></h2>
+
+</body>
+</html>
