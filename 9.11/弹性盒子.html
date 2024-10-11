@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            width: 600px;
+            height: 300px;
+            background-color: aqua;
+
+            /* border:solid red 1px; */
+
+            margin: 0 auto;
+
+            /* 弹性盒子 flex  默认属性 装满的时候按比例平分宽度*/
+
+            display: flex;/* 容器升级为弹性盒子*/
+
+            /* flex-wrap: wrap; */
+
+            /* 一行装不下，在新的一行显示 了解即可 */
+
+            align-items: center;/*设置内容在垂直方向的位置 center end*/
+
+            /* justify-content: space-between; */
+            /* justify-content: center;*/
+            justify-content: space-around;
+        }
+        .A{
+            width: 100px;
+            height: 100px;
+            background-color: blanchedalmond;
+            font-size: 30px;
+            outline:solid white 2px;
+            /* border: solid black 1px; */
+            /* display: inline-block; */
+        }
+        .A:hover{
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <div class="A">1</div>
+        <div class="A">2</div>
+        <div class="A">3</div>
+
+    </div>
+</body>
+</html>

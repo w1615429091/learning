@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计算器
+    </title>
+    <style> 
+        .box {
+            width: 300px;
+            height: 500px;
+            background-color: white;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin: 0 auto;
+            border-radius: 10px;
+            border: solid 1px rgb(233, 219, 219);
+        }
+        .box1 {
+            width: 75px;
+            height: 80px;
+            /* background-color: aquamarine; */
+            display: inline;
+            margin: 0    auto;
+            line-height: 70px;
+            text-align: center;
+            /* border-radius: 5px; */
+            border: solid 1px rgb(234, 234, 234);
+            background-color: rgb(255, 255, 255);
+            font-size: 25px;
+        }
+        
+        .box0 {
+            width: 295px;
+            height: 180px;
+            border: solid 1px rgb(233, 219, 219);
+            text-align: right;
+            /* margin: 0 auto; */
+            border: solid 1px rgb(233, 219, 219);
+            font-size: 30px;
+            background-color: rgb(240, 240, 240);
+        }
+        .box1:hover {
+            background-color:rgb(228, 188, 142) ;
+        }
+        
+        #calculate {
+            background-color: rgb(248, 151, 99);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <input class="box0" id="input" type="text" name="" id="">
+        <button class="box1" onclick="add(1)">1</button>
+        <button class="box1" onclick="add(2)">2</button>
+        <button class="box1" onclick="add(3)">3</button>
+        <button class="box1" id="jia " onclick="add('+')">+</button>
+        <button class="box1" onclick="add(4)">4</button>
+        <button class="box1" onclick="add(5)">5</button>
+        <button class="box1" onclick="add(6)">6</button>
+        <button class="box1" id="jian" onclick="add('-')">-</button>
+        <button class="box1" onclick="add(7)">7</button>
+        <button class="box1" onclick="add(8)">8</button>
+        <button class="box1" onclick="add(9)">9</button>
+        <button class="box1" id="cheng" onclick="add('*')">*</button>
+        <button class="box1" onclick="remove()">C</button>
+        <button class="box1" onclick="add(0)">0</button>
+        <button class="box1" onclick="calculate()" id="calculate">=</button>
+        <button class="box1" id="chu"  onclick="add('/')">/</button>
+    </div>
+</body>
+
+<script>
+    
+    function add(s) {
+        var input = document.getElementById("input");
+        input.value = input.value + s;
+    }
+    function calculate()
+    {
+        var input = document.getElementById("input");
+        val = document.getElementById("input").value;
+        input.value = eval(val);
+    }
+    function remove()
+    {
+        var input = document.getElementById("input");
+        input.value = "";   
+    }
+</script>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片切换</title>
+    <style>
+        /* CSS */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #333;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button id="toggleButton">切换图片</button>
+        <img id="image" src="./img/4.jpg" alt="图片1">
+    </div>
+
+    <script>
+        // JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggleButton = document.getElementById('toggleButton');
+            const image = document.getElementById('image');
+
+            // 定义两张图片的路径
+            const imagePaths = ['./img/4.jpg', './img/3.jpg'];
+            let currentIndex = 0;
+
+            // 切换图片的函数
+            function toggleImage() {
+                currentIndex = (currentIndex + 1) % imagePaths.length;
+                image.src = imagePaths[currentIndex];
+            }
+
+            // 为按钮添加点击事件监听器
+            toggleButton.addEventListener('click', toggleImage);
+        });
+    </script>
+</body>
+</html>

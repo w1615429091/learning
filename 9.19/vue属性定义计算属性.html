@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app4">
+        <p>{{a}}</p>
+        <p>{{b}}</p>
+        <p>{{c}}</p>
+        <p>{{he}}</p>
+        <p>a*b*c={{ji}}</p>
+        <p>球的体积为：{{s}}</p>
+    </div>
+    
+</body>
+<script src="../Vue.js"></script>
+<script>
+    var v1 = new Vue({
+        el:'#app4',
+        data:{
+            a:3,
+            b:4,
+            c:5,
+            pi:3.1415926,
+            r:2
+        },
+        //属性中定义了计算属性
+        computed:{
+            he:{
+                get(){
+                    return this.a + this.b + this.c;
+                }
+            },
+            ji:{
+                get(){
+                    return this.a * this.b * this.c;
+            }
+            },
+            s:{
+                get(){
+                    return 4 * this.pi * this.r * this.r;
+            }
+        }
+        }
+    })
+</script>
+</html>

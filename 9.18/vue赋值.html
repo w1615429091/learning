@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="../Vue.js"></script>
+<body>
+    <div id="app">
+        <p>学号：{{number}}</p>
+        <p>姓名：{{name}}</p>
+        <!-- v-bind:实现数据的单向绑定 格式：v-bind:属性名="数据名"
+          -->
+        <!-- v-model实现数据的双向绑定 格式：v-model="数据名"   -->
+        <input type="text" name="" id="a1" v-bind:value="a1">
+        <input type="text" name="" id="a2" v-model:value="a2">
+        <span v-if="a3">显示</span>
+        <br>
+        <span v-for="x in sz">{{x}}</span>
+        <br>
+        <span v-for="x in sz">x</span>
+
+        <!-- <ul>
+            <li v-for="x in sz">{{x}}</li>
+        </ul> -->
+        <button v-on:click="sing()">唱歌</button>
+        <button v-on:click="dance()">跳舞</button>
+    </div>
+</body>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            number:"00123456",
+            name:"张三",
+            a1:"ls",
+            a2:"ws",
+            a3:true,
+            sz:["张三","李四","王五","赵六","洪七"]
+
+        },
+        //函数的定义格式：methods:{函数名:function(){}}
+        //定义一个方法
+        methods:{
+            sing:function(){
+                alert("唱歌");
+            },
+            //函数的简洁定义格式：函数名(){},
+            dance(){
+                alert("跳舞");
+
+            }
+        }
+    })
+    
+    console.log("Good job,bro!");
+</script>
+</html>

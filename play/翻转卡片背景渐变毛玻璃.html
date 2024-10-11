@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .card {
+        width: 300px;
+        height: 200px;
+        position: relative;
+        perspective: 1000px;
+        margin: auto; /* 居中 */
+        
+    }
+
+    .card .front, .card .back {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        backface-visibility: hidden;
+        transition: transform 0.6s;
+    }
+
+    .card .front {
+        transform: rotateY(0deg);
+    }
+
+    .card .back {
+        transform: rotateY(180deg);
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: rgba(255, 255, 255, 0.3); /* 半透明背景 */
+        border: none;
+        border-radius: 5px;
+        backdrop-filter: blur(10px); /* 毛玻璃效果 */
+        box-shadow: 0 300px 200px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+        transition: background-color 0.3s ease, transform 0.3s ease; /* 过渡效果 */
+    }
+
+    .card:hover .front {
+        transform: rotateY(180deg);
+    }
+
+    .card:hover .back {
+        transform: rotateY(0deg);
+    }
+    body {
+        margin: 0;
+        height: 100vh;
+        background: linear-gradient(45deg, #ff0000, #00ff80, #2f00ff);
+        background-size: 400% 400%;
+        animation: gradientAnimation 15s ease infinite;
+        }
+
+    @keyframes gradientAnimation {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    </style>
+</head>
+<body>
+    <div class="card">
+    <div class="front">
+        <img src="./img/4.jpg" alt="Front">
+    </div>
+    <div class="back">
+        <h1>星辰大海</h1>
+        <p>人生的 journey 就像一张张翻开的卡片，每张卡片都有不同的故事，每张卡片都有不同的感悟。</p>
+    </div>
+</div>
+
+</body>
+</html>

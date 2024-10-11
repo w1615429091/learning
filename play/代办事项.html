@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin:0 auto;
+            text-align: center;
+        }
+        .box{
+            width: 300px;
+            height: 375px;
+            margin: 0 auto;
+            background-color: #f2f2f2;
+            border: 1px solid #ccc;
+        }
+        .box1{
+            width: 240px;
+            height: 50px;
+            margin: 0 auto;
+            background-color: #fff;
+            border: solid 3px #f2f2f2;
+ 
+        }
+        .add{
+            width: 30px;
+            height: 30px;
+            background-color: skyblue;
+            border-radius: 50%;
+            transform: translate(230px,-335px);
+            text-align: center;
+            line-height: 25px;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        .ok{
+            width: 20px;
+            height: 20px;
+            border: solid 1px #ccc;
+            transform: translate(10px,15px);
+            cursor: pointer;
+            
+        }
+        .event{
+            line-height: 10px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="box">
+        <h1>代办事项</h1>
+
+        <div class="box1">
+            <div class="ok" id="ok1" onclick="yes(1)"></div>
+            <div id="b1" class="event"></div>
+        </div>
+        <div class="box1">
+            <div class="ok" id="ok2" onclick="yes(2)"></div>
+            <div id="b2" class="event"></div>
+        </div>
+        <div class="box1">
+            <div class="ok" id="ok3" onclick="yes(3)"></div>
+            <div id="b3" class="event"></div>
+        </div>
+        <div class="box1">
+            <div class="ok" id="ok4" onclick="yes(4)"></div>
+            <div id="b4" class="event"></div>
+        </div>
+        <div class="box1">
+            <div class="ok" id="ok5" onclick="yes(5)"></div>
+            <div id="b5" class="event"></div>
+        </div>
+        <div class="add" onclick="add()">+</div>
+    </div>
+</body>
+<script>
+    function add(){
+        let event = prompt("请输入待办事项：");
+        console.log(event);
+        for (let i = 1; i <= 5; i++) {
+            let div = document.getElementById('b' + i);
+            console.log(i);
+            if (div.innerHTML === "") {
+                console.log(i);
+                div.innerHTML = event;
+                break;
+            }
+        }
+    }
+    function yes(s){
+        let div = document.getElementById('b'+s);
+        let ok = document.getElementById('ok'+s);
+        
+        if (div.innerHTML.trim() !== "") { // 判断 div 是否为空
+        div.style.textDecoration = "line-through"; // 设置删除线
+        div.style.color = "#ccc"; // 修改颜色
+
+        // 更新 ok div 的内容为一个绿色对勾
+        ok.innerHTML = "&#10003;"; // Unicode 对勾
+        ok.style.color = "green"; // 设置对勾颜色为绿色
+        ok.style.fontSize = "20px"; // 可以调整字号
+        ok.style.lineHeight = "20px"; // 调整行高，使其垂直居中
+        ok.style.backgroundColor = "transparent"; // 背景透明
+    }
+}
+    
+</script>
+</html>

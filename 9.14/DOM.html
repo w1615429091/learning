@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="p1">河南师范大学</p>
+    <h1>张三</h1>
+    <h1>李四</h1>
+    <h1>王五</h1>
+</body>
+<script>
+    var a = document.getElementById("p1");
+    document.write(a);
+    a.style.backgroundColor = "red";
+    a.innerHTML = "Hello World";
+    a.style.color = "blue";
+    a.align = "center";
+    a.style.transform = "translate(100px, 100px)";
+
+    //获取多个标签
+    var h1s = document.getElementsByTagName("h1");
+    console.log(h1s);
+    h1s[0].style.color = "green";
+    h1s[1].style.color = "yellow";
+    h1s[2].style.color = "purple";
+    
+</script>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="./img/2.jpg"  id="imgs" alt="">
+</body>
+<script>
+    var imgs = document.querySelector("#imgs");
+    imgs.onmouseover = function(){
+        imgs.src = "./img/4.jpg";
+    }
+    imgs.onmouseout = function(){
+        imgs.src = "./img/2.jpg";
+    }
+</script>
+</html>

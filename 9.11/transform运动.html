@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* 1.translat:线性运动 2.rotate旋转运动 3.scale缩放运动 4.skew倾斜运动 */
+    #img1{
+        width: 300px;
+
+        transform: translate(50px,50px);
+        /* transform: rotateZ(50deg); */
+    }
+    #img2{
+        width: 300px;
+        /* transform: translate(200px,50px); */
+        /* 缩放 */
+        transform: scale(0.2)
+    }
+    #img3{
+        width: 300px;
+        /* transform: translate(200px,50px); */
+        /* 倾斜 */
+        transform: skew(20deg)
+    }
+    
+</style>
+<body>
+    <div>
+    
+        <img id="img1" src="./img/1.gif" alt="">
+        <img id="img2" src="./img/1.jpg" alt="">
+        <img id="img3" src="./img/2.jpg" alt="">
+    </div>
+</body>
+</html>

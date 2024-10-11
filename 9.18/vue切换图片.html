@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>切换图片</title>
+</head>
+<body>
+    <div id="app">
+        <button v-on:click="changeImg">切换图片</button>
+        <img :src="currentImg" alt="图片" />
+    </div>
+
+    <script src="../Vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                currentImg: '../img/1.jpg',
+                imgList: [
+                    '../img/1.jpg',
+                    '../img/2.jpg',
+                    '../img/3.jpg'
+                ],
+                currentIndex: 0
+            },
+            methods: {
+                changeImg: function() {
+                    // 切换到下一个图片
+                    this.currentIndex = (this.currentIndex + 1) % this.imgList.length;
+                    this.currentImg = this.imgList[this.currentIndex];
+                }
+            }
+        });
+    </script>
+</body>
+</html>

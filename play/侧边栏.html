@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自动隐藏侧边栏</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    /* styles.css */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.sidebar {
+    width: 20px;
+    height: 100vh;
+    background-color: #000000;
+    overflow: hidden;
+    transition: width 0.3s ease-in-out;
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    border-radius: 5px;
+}
+
+.sidebar:hover {
+    width: 200px;
+    border-radius: 5%;
+    background-color: #77d47c;
+    color: white;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    padding: 15px;
+    white-space: nowrap;
+}
+
+.sidebar ul li a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    display: block;
+}
+
+.sidebar ul li a:hover {
+    background-color: #68c942;
+}
+
+</style>
+<body>
+    <div class="sidebar">
+        <ul>
+            <li><a href="#">首页</a></li>
+            <li><a href="#">关于我们</a></li>
+            <li><a href="#">服务</a></li>
+            <li><a href="#">联系我们</a></li>
+        </ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+<script>
+    // script.js
+document.addEventListener('DOMContentLoaded', function() {
+    const sidebar = document.querySelector('.sidebar');
+
+    sidebar.addEventListener('mouseenter', function() {
+        sidebar.style.width = '200px';
+    });
+
+    sidebar.addEventListener('mouseleave', function() {
+        sidebar.style.width = '20px';
+    });
+});
+
+</script>
+</html>

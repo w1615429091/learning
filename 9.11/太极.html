@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #div1:hover{
+        transform: rotate(9000000deg);
+    }
+    #div1{
+        height: 300px;
+        width: 300px;
+        border-radius:  50% ;
+        background-color: aqua;
+        background-image: linear-gradient( to right,#ffffff 50%,#000000 50%);
+        border:solid rgb(0, 0, 0) 2px;
+        transition: 10000s;
+            
+    }
+    #div2{
+        height: 150px;
+        width: 150px;
+        background-color: #000000;
+        border-radius: 100%;
+        transform: translate(75px,150px);
+    }
+    #div3{
+        height: 150px;
+        width: 150px;
+        background-color: #ffffff;
+        border-radius: 100%;
+        transform: translate(75px,-150px);
+    }
+    #div11{
+        height: 50px;
+        width: 50px;
+        background-color: #000000;
+        border-radius: 50%;
+        transform: translate(110px,-250px);
+    }
+    #div12{
+        height: 50px;
+        width: 50px;
+        background-color: #ffffff;
+        border-radius: 50%;
+        transform: translate(110px,-150px);
+    }
+</style>
+<body>
+    <div id="div1">
+        <div id="div2"></div>
+        <div id="div3"></div>
+        <div id="div11"></div>
+        <div id="div12"></div>
+    </div>
+
+</body>
+</html>

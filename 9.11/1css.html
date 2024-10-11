@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            
+            /* 文字居中 */
+            text-align: center;
+            /* line-height需要与height高度一致 */
+            line-height: 300px;
+            /* 文字居中 */
+            background-color: aqua;
+            height: 300px;
+            width: 900px;
+            color: #ffffff;
+            font-size: 50px;
+            transform: rotate(30deg);
+            font-family: 黑体;
+        }
+        #text:hover{
+            text-shadow: yellow;
+        }
+        #myDIV
+        {
+            width:300px;
+            height:200px;
+            background:red;
+            animation:mymove 1s infinite;
+            /*Safari 和 Chrome:*/
+            -webkit-animation:mymove 5s infinite;
+        }
+        @keyframes mymove
+        {
+            from {background-color:red;}
+            to {background-color:blue;}
+        }
+        #t2{
+            width: 300px;
+            height: 100px;
+            background-color: blue;
+            transform: rotateY(150deg);
+            line-height: 100px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body id="myDIV">
+    <div id="text">hzh是什么东西</div>
+    <!-- <h1>不是哥们</h1> -->
+    <!-- <div id="myDIV"></div> -->
+     <h2 id="t2">河南师范大学</h2>
+
+</body>
+</html>

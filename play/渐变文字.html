@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>渐变文字</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+.gradient-text {
+    font-size: 100px;
+    font-weight: bold;
+    background: linear-gradient(45deg, #ff5733, #33ff57);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+@supports not (background-clip: text) {
+    .gradient-text {
+        color: #ff5733;  /* 备用颜色 */
+    }
+}
+
+
+</style>
+<body>
+    <h1 class="gradient-text">渐变文字示例</h1>
+</body>
+</html>

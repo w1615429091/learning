@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>跳转到视频页面</title>
+    <style>
+        /* 基本的CSS样式 */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            background-image: url("./img/3.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: rgba(255, 255, 255, 0.3); /* 半透明背景 */
+            border: none;
+            border-radius: 5px;
+            backdrop-filter: blur(10px); /* 毛玻璃效果 */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+            transition: background-color 0.3s ease, transform 0.3s ease; /* 过渡效果 */
+        }
+
+        button:hover {
+            background-color: rgba(255, 255, 255, 0.5); /* 鼠标悬停时增加透明度 */
+            transform: scale(1.5); /* 鼠标悬停时稍微放大 */
+        }
+
+
+        /* 视频页面的样式 */
+        .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.8);
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0s, opacity 0.5s ease;
+        }
+
+        .video-container.visible {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        video {
+            max-width: 90%;
+            max-height: 90%;
+            border: 2px solid #fff;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button id="playButton">播放视频</button>
+    </div>
+
+    <div class="video-container" id="videoContainer">
+        <video controls>
+            <source src="./img/视频.mp4" type="video/mp4">
+            您的浏览器不支持HTML5视频标签。
+        </video>
+    </div>
+
+    <script>
+        // JavaScript代码
+        document.addEventListener('DOMContentLoaded', function() {
+            const playButton = document.getElementById('playButton');
+            const videoContainer = document.getElementById('videoContainer');
+
+            // 为按钮添加点击事件监听器
+            playButton.addEventListener('click', function() {
+                videoContainer.classList.add('visible');
+            });
+
+            // 为视频容器添加点击事件监听器，点击容器外部关闭视频
+            videoContainer.addEventListener('click', function(event) {
+                if (event.target === videoContainer) {
+                    videoContainer.classList.remove('visible');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
